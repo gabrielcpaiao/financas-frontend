@@ -1,0 +1,19 @@
+{
+  "name": "financas-frontend",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "nuxt": "^3.13.0"
+  },
+  "dependencies": {
+    "@nuxt/ui": "^2.18.0",
+    "@pinia/nuxt": "^0.5.5",
+    "pinia": "^2.2.2"
+  }
+}
