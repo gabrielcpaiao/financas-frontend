@@ -27,16 +27,32 @@
         </template>
 
         <form class="flex flex-col gap-4" @submit.prevent="handleSubmit">
+          
           <UFormField label="Nome">
-            <UInput v-model="form.name" required class="w-full" />
+            <UInput
+              v-model="form.name"
+              required
+              class="w-full"
+            />
           </UFormField>
 
           <UFormField label="Tipo">
-            <USelect v-model="form.type" :options="typeOptions" class="w-full" />
+            <USelect
+              v-model="form.type"
+              :options="typeOptions"
+              class="w-full"
+            />
           </UFormField>
 
           <UFormField label="Saldo inicial">
-            <UInput v-model.number="form.initialBalance" type="number" step="0.01" class="w-full" />
+            <UInput
+              v-model.number="form.initialBalance"
+              type="number"
+              min="0"
+              step="0.01"
+              required
+              class="w-full"
+            />
           </UFormField>
 
           <p v-if="errorMessage" class="text-sm text-error-600">{{ errorMessage }}</p>
@@ -99,12 +115,18 @@ async function handleSubmit() {
   saving.value = true
   errorMessage.value = ''
   try {
-    if (editingId.value) {
+    if (editingId.value !== null) {
       await update(editingId.value, { ...form })
-      toast.add({ title: 'Conta atualizada', color: 'success' })
+      toast.add({
+        title: 'Conta atualizada',
+        color: 'success'
+      })
     } else {
       await create({ ...form })
-      toast.add({ title: 'Conta criada', color: 'success' })
+      toast.add({
+        title: 'Conta criada',
+        color: 'success'
+      })
     }
     modalOpen.value = false
   } catch (e: any) {

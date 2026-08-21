@@ -23,6 +23,12 @@
       <UButton to="/credit-cards" variant="ghost" color="neutral" block class="justify-start" icon="i-heroicons-credit-card">
         Cartão de crédito
       </UButton>
+      <UButton to="/budget" variant="ghost" color="neutral" block class="justify-start" icon="i-heroicons-calculator">
+        Orçamento
+      </UButton>
+      <UButton to="/investments" variant="ghost" color="neutral" block class="justify-start" icon="i-heroicons-chart-bar">
+        Investimentos
+      </UButton>
 
       <div class="flex-1" />
 
